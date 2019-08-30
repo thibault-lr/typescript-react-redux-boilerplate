@@ -1,2 +1,3 @@
-# resume
-Public resume
+# Typesript Resume
+
+Resume using typescript and react 
