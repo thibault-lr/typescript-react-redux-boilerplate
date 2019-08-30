@@ -7,16 +7,20 @@
   "author": "thibault.leroy <thibault.le-roy@saegus.com>",
   "license": "MIT",
   "scripts": {
-    "dev" : "NODE_ENV=staging ./node_modules/.bin/webpack" ,
-    "production" : "NODE_ENV=production"
+    "test" : "jest",
+    "dev": "NODE_ENV=staging ./node_modules/.bin/webpack",
+    "production": "NODE_ENV=production"
   },
   "engines": {
     "node": "12.7.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "jest": "^24.9.0",
     "source-map-loader": "^0.2.4",
+    "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "typescript": "^3.6.2",
     "webpack": "^4.39.3",
