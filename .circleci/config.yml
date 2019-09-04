@@ -44,6 +44,6 @@ jobs:
 
         
       - run:
-          scp -oStrictHostKeyChecking=no -r -P $SSH_PORT /home/circleci/repo/dist/* $SSH_USER@$SSH_HOST:/home/circleci/
+          scp -oStrictHostKeyChecking=no -r -P $SSH_PORT /home/circleci/repo/dist/* $SSH_USER@$SSH_HOST:$DEPLOY_FOLDER
 
         
