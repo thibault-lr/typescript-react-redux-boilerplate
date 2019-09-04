@@ -28,8 +28,9 @@ jobs:
 
 
   deploy:
-    machine:
-      enabled: true
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:12.7.0
     working_directory: ~/repo
     environment:
       - NODE_ENV: "production"
