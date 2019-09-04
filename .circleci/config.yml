@@ -36,10 +36,8 @@ jobs:
       # run tests!
       - run: yarn test
 
-
       - run: yarn build:prod 
 
       - add_ssh_keys:
-        fingerprints:
-          - "SHA256:6B9tBf5pntXfAybWeIJ7cQT7/XMzutdBFBITTLS1cjE"
-      - run: scp -r -o StrictHostKeyChecking=no -P $SSH_POST dist/* $SSH_USERNAME@$SSH_SERVER:/home/$SSH_USERNAME
+          fingerprints:
+            - "SHA256:6B9tBf5pntXfAybWeIJ7cQT7/XMzutdBFBITTLS1cjE"
