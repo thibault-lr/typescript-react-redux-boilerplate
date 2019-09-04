@@ -39,8 +39,7 @@ jobs:
 
       - run: yarn build:prod 
 
-  deploy:
-    - add_ssh_keys:
-      fingerprints:
-        - $SSH_KEY_FINGERPRINT
-    - run: scp -r -o StrictHostKeyChecking=no -P $SSH_POST dist/* $SSH_USERNAME@$SSH_SERVER:/home/$SSH_USERNAME
+      - add_ssh_keys:
+        fingerprints:
+          - $SSH_KEY_FINGERPRINT
+      - run: scp -r -o StrictHostKeyChecking=no -P $SSH_POST dist/* $SSH_USERNAME@$SSH_SERVER:/home/$SSH_USERNAME
