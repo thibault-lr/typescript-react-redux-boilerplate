@@ -42,8 +42,8 @@ jobs:
           fingerprints:
             - "SHA256:6B9tBf5pntXfAybWeIJ7cQT7/XMzutdBFBITTLS1cjE"
 
+        
       - run:
-        name: Deploy Over SSH
-        command: | 
-          scp -r -P $SSH_PORT dist/* $SSH_USER@$SSH_HOST:/home/circleci/
+          scp -oStrictHostKeyChecking=no -r -P $SSH_PORT /home/circleci/repo/dist/* $SSH_USER@$SSH_HOST:/home/circleci/
+
         
