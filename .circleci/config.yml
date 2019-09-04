@@ -28,7 +28,7 @@ jobs:
       # run tests!
       - run: yarn test
 
-      - run: yarn build:prod 
+      - run: NODE_ENV=production yarn build:prod 
 
 
   deploy:
