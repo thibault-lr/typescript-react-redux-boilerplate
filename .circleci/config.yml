@@ -48,11 +48,11 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      
+          key: v1-dependencies-{{ checksum "package.json" }}  
+            
       - add_ssh_keys:
-        fingerprints:
-          - "SHA256:6B9tBf5pntXfAybWeIJ7cQT7/XMzutdBFBITTLS1cjE"     
+          fingerprints:
+            - "SHA256:6B9tBf5pntXfAybWeIJ7cQT7/XMzutdBFBITTLS1cjE"              
             
       - run: yarn build:prod
       - run:
