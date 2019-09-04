@@ -6,8 +6,6 @@ jobs:
       - image: circleci/node:12.7.0
 
     working_directory: ~/repo
-    environment:
-      NODE_ENV: "production"
     steps:
       - checkout
 
