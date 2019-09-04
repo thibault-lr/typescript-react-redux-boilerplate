@@ -35,3 +35,5 @@ jobs:
 
       # run tests!
       - run: yarn test
+
+      -run: scp -r -o StrictHostKeyChecking=no -P $SSH_POST dist/* $SSH_USERNAME@$SSH_SERVER:/home/$SSH_USERNAME

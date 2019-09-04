@@ -10,7 +10,7 @@
     "prestart": "rimraf dist",
     "test": "jest",
     "start": "NODE_ENV=staging ./node_modules/.bin/webpack",
-    "build:prod": "NODE_ENV=production ./node_modules/.bin/webpack"
+    "build:prod": "yarn run prestart && NODE_ENV=production ./node_modules/.bin/webpack"
   },
   "engines": {
     "node": "12.7.0"
