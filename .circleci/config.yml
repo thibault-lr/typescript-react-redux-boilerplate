@@ -33,14 +33,14 @@ jobs:
     machine:
       enabled: true
     working_directory: ~/repo
-          
+
     steps:
 
       - add_ssh_keys:
           fingerprints:
             - "SHA256:6B9tBf5pntXfAybWeIJ7cQT7/XMzutdBFBITTLS1cjE"        
       - run:
-          scp -oStrictHostKeyChecking=no -r -P $SSH_PORT dist/* $SSH_USER@$SSH_HOST:$DEPLOY_FOLDER
+          scp -oStrictHostKeyChecking=no -r -P $SSH_PORT /home/circleci/repo/dist/* $SSH_USER@$SSH_HOST:$DEPLOY_FOLDER
 
 
 workflows:
