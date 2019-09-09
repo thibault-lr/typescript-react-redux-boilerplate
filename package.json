@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "prestart": "rimraf dist",
-    "test": "jest",
+    "test": "jest -u",
     "start": "NODE_ENV=staging ./node_modules/.bin/webpack-dev-server --mode development --open --hot --inline",
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack"
