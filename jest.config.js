@@ -9,5 +9,6 @@ module.exports = {
     "^.+\\.scss$": "identity-obj-proxy"
   },
   // Setup Enzyme
-  "setupFilesAfterEnv": ["<rootDir>/enzymeSetUp.ts"]
+  "setupFilesAfterEnv": ["<rootDir>/enzymeSetUp.ts"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
 }
