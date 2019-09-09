@@ -2,7 +2,7 @@ import * as React from "react"
 
 
 import { shallow } from 'enzyme';
-import Title from './title';
+import Title from './Title';
 
 test('CheckboxWithLabel changes the text after click', () => {
   const checkbox = shallow(<Title title='test' />);
