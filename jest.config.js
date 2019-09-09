@@ -4,5 +4,10 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   testRegex: "\\.test\\.tsx$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleNameMapper: {
+    "^.+\\.scss$": "identity-obj-proxy"
+  },
+  // Setup Enzyme
+  "setupFilesAfterEnv": ["<rootDir>/enzymeSetUp.ts"]
 }

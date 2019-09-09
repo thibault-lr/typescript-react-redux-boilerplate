@@ -6,3 +6,4 @@ dist
 
 # Jest
 coverage
+src/**/__snapshots__
