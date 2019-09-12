@@ -9,12 +9,16 @@
   "scripts": {
     "prestart": "rimraf dist",
     "test": "jest -u",
-    "start": "NODE_ENV=staging ./node_modules/.bin/webpack-dev-server --mode development --open --hot --inline",
+    "start": "NODE_ENV=staging ./node_modules/.bin/webpack-dev-server --mode development --open --hot",
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack"
   },
   "engines": {
     "node": "12.7.0"
+  },
+  "_moduleAliases": {
+    "@components": "dist/src/components",
+    "@layouts": "dist/src/layouts"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.3",
@@ -31,6 +35,7 @@
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
@@ -40,6 +45,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "module-alias": "^2.2.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "rimraf": "^3.0.0",

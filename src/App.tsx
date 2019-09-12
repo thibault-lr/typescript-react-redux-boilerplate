@@ -1,12 +1,14 @@
 import * as React from "react";
 
-import Title from "./atoms/Title/Title"
-
+import Title from "components/atoms/Title/Title"
+import Main from "layouts/Main"
 
 class App extends React.Component<{}, {}> {
   public render(): JSX.Element {
     return (
-      <Title title="test" />
+      <Main>      
+        <Title title="test" />
+      </Main>
     );
   }
 }

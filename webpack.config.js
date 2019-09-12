@@ -4,6 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const webpack = require('webpack')
 
+console.log(__dirname);
+
+
 module.exports = {
   entry: './src/index.tsx',
   mode : process.env.NODE_ENV === "staging" ? "development" : "production",
@@ -18,36 +21,24 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.module\.s(a|c)ss$/,
-        loader: [
-          process.env.NODE_ENV === "staging" ? 'style-loader' : MiniCssExtractPlugin.loader,
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              camelCase: true,
-              sourceMap: process.env.NODE_ENV === "staging"
+            loader: "css-loader",
+            query: {
+              sourceMap: true
             }
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: process.env.NODE_ENV === "staging"
-            }
-          }
-        ]
-      },
-      {
-        test: /\.s(a|c)ss$/,
-        exclude: /\.module.(s(a|c)ss)$/,
-        loader: [
-          process.env.NODE_ENV === "staging" ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: process.env.NODE_ENV === "staging"
+            loader: "sass-loader",
+            query: {
+              sourceMap: true,
+              sassOptions : {
+                includePaths: [path.resolve(__dirname, "src", "scss")]
+              }
+              
             }
           }
         ]
@@ -55,7 +46,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.scss']
+    extensions: ['.tsx', '.ts', '.js', '.scss'],
+    alias : {
+      components: path.resolve(__dirname, "src","components"),
+      layouts: path.resolve(__dirname, "src","layouts"),
+      scss : path.resolve(__dirname, "src","scss")
+    }
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

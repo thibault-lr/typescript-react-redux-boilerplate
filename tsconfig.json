@@ -7,6 +7,12 @@
     "target": "es6",
     "jsx": "react",
     "esModuleInterop" : true,
-    "strict": true
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*" : ["./src/components/*"],
+      "@layouts/*" : ["./src/layouts/*"]
+    }
   }
+  
 }
