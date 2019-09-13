@@ -9,7 +9,8 @@ module.exports =
   "collectCoverageFrom": [
     "src/**/*.{js,jsx,ts,tsx}",
     "!/node_modules/",
-    "!src/**/index.tsx"
+    "!src/**/index.tsx",
+    "!src/index.tsx",
   ],
   "setupFilesAfterEnv": ["<rootDir>/enzymeSetUp.ts"],
   "snapshotSerializers": ["enzyme-to-json/serializer"],
