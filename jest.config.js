@@ -1,14 +1,22 @@
-module.exports = {
-  roots: ["<rootDir>/src"],
-  transform: {
+module.exports = 
+{
+  "preset": 'ts-jest',
+  "testEnvironment": 'node',
+  "roots": ["<rootDir>/src"],
+  "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  testRegex: "\\.test\\.tsx$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  moduleNameMapper: {
-    "^.+\\.scss$": "identity-obj-proxy"
-  },
-  // Setup Enzyme
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!/node_modules/",
+    "!src/**/index.tsx"
+  ],
   "setupFilesAfterEnv": ["<rootDir>/enzymeSetUp.ts"],
-  "snapshotSerializers": ["enzyme-to-json/serializer"]
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+
+  "moduleNameMapper": {
+    "^components/(.*)": "<rootDir>/src/components/$1",
+    "^layouts/(.*)": "<rootDir>/src/layouts/$1",
+    "^.+\\.scss$": "identity-obj-proxy"
+  }
 }

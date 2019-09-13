@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "prestart": "rimraf dist",
-    "test": "jest -u",
+    "test": "jest -u ",
     "start": "NODE_ENV=staging ./node_modules/.bin/webpack-dev-server --mode development --open --hot",
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack"
@@ -39,7 +39,7 @@
     "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.6.2",
     "webpack-dev-server": "^3.8.0"

@@ -1,6 +1,6 @@
 import * as React from "react" 
 
-import { Header } from "components/molecules/Header"
+import Header  from "./../components/molecules/Header/Header"
 import { IHeaderCardProps } from "components/atoms/HeaderCard"
 
 import "./style.scss"

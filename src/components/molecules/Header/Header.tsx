@@ -1,5 +1,6 @@
 import * as React from "react" 
 
+// import { IHeaderCardProps } from "./../../atoms/HeaderCard/HeaderCard"
 import { IHeaderCardProps, HeaderCard } from "components/atoms/HeaderCard"
 
 import "./style.scss"
@@ -9,7 +10,7 @@ interface IHeaderProps {
   items: IHeaderCardProps[]
 }
 
-export const Header = (props: IHeaderProps ) => {
+const Header = (props: IHeaderProps ) => {
   return (
   <div className="header">
     {
@@ -21,3 +22,5 @@ export const Header = (props: IHeaderProps ) => {
 )
 
   }
+
+export default Header
