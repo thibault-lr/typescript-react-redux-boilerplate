@@ -38,6 +38,12 @@ module.exports = {
             }
           },
           {
+            loader: "postcss-loader",
+            query : {
+              sourceMap : true
+            }
+          },
+          {
             loader: "sass-loader",
             query: {
               sourceMap: true,
