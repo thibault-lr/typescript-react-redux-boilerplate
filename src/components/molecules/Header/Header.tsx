@@ -1,26 +1,27 @@
-import * as React from "react" 
+import * as React from 'react';
 
-// import { IHeaderCardProps } from "./../../atoms/HeaderCard/HeaderCard"
-import { IHeaderCardProps, HeaderCard } from "components/atoms/HeaderCard"
+import { IHeaderCardProps, HeaderCard } from 'components/atoms/HeaderCard';
 
-import "./style.scss"
+import './style.scss';
 
 
 interface IHeaderProps {
   items: IHeaderCardProps[]
 }
 
-const Header = (props: IHeaderProps ) => {
+const Header = (props: IHeaderProps) => {
+  const { items } = props;
   return (
-  <div className="header">
-    {
-      props.items.map( (item, i) => 
-        <HeaderCard content={item.content} key={`item-${i}`} /> 
-        )
-    }
-  </div>
-)
+    <div className="header">
+      {
+        // eslint-disable-next-line react/no-array-index-key
+        items.map((item, i) => <HeaderCard content={item.content} key={`item-${i}`} />)
+      }
+    </div>
+  );
+};
 
-  }
-
-export default Header
+export {
+  // eslint-disable-next-line import/prefer-default-export
+  Header,
+};

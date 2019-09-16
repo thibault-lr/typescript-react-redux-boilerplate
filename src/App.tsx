@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
 
-import Title from "components/atoms/Title/Title"
-import Main from "layouts/Main"
+import Title from 'components/atoms/Title/Title';
+import Main from 'layouts/Main';
 
-class App extends React.Component<{}, {}> {
+class App extends React.PureComponent<{}, {}> {
   public render(): JSX.Element {
     return (
-      <Main>      
+      <Main>
         <Title title="test" />
       </Main>
     );
