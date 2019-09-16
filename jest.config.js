@@ -18,6 +18,7 @@ module.exports = {
   moduleNameMapper: {
     '^components/(.*)': '<rootDir>/src/components/$1',
     '^pages/(.*)': '<rootDir>/src/pages/$1',
+    '^config/(.*)': '<rootDir>/config/$1',
     '^layouts/(.*)': '<rootDir>/src/layouts/$1',
     '^.+\\.scss$': 'identity-obj-proxy',
   },
