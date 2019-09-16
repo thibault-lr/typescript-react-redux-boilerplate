@@ -1,10 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-console.log(__dirname)
 module.exports = {
-  entry : path.resolve(__dirname, '..', 'src', 'index.tsx'),
+  entry: path.resolve(__dirname, '..', 'src', 'index.tsx'),
 
   output: {
     filename: '[name].[hash].bundle.js',
@@ -14,17 +13,18 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.scss'],
     alias: {
-      components: path.resolve(__dirname, "..","src", "components"),
-      layouts: path.resolve(__dirname, "..","src", "layouts"),
-      scss: path.resolve(__dirname, "..","src", "scss")
-    }
+      components: path.resolve(__dirname, '..', 'src', 'components'),
+      pages: path.resolve(__dirname, '..', 'src', 'pages'),
+      layouts: path.resolve(__dirname, '..', 'src', 'layouts'),
+      scss: path.resolve(__dirname, '..', 'src', 'scss'),
+    },
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -32,37 +32,36 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             query: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
-            loader: "postcss-loader",
-            query : {
-              sourceMap : true
-            }
+            loader: 'postcss-loader',
+            query: {
+              sourceMap: true,
+            },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             query: {
               sourceMap: true,
               sassOptions: {
-                includePaths: [path.resolve(__dirname, "..", "src", "scss")]
-              }
-
-            }
-          }
-        ]
-      }
-    ]
+                includePaths: [path.resolve(__dirname, '..', 'src', 'scss')],
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin(({
-      title : "Resume",
-      template: path.resolve(__dirname, "..", "public", "index.html")
-    }))
+      title: 'Resume',
+      template: path.resolve(__dirname, '..', 'public', 'index.html'),
+    })),
   ],
 
-}
+};

@@ -1,7 +1,7 @@
 const WebpackMerge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const common = require('./webpack.common.js');
 
 module.exports = WebpackMerge(common, {
   mode: 'production',
@@ -10,7 +10,7 @@ module.exports = WebpackMerge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
-      chunkFilename:  '[id].[hash].css'
+      chunkFilename: '[id].[hash].css',
     }),
   ],
   optimization: {
@@ -21,12 +21,12 @@ module.exports = WebpackMerge(common, {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           enforce: true,
-          chunks: 'all'
-        }
-      }
+          chunks: 'all',
+        },
+      },
     },
     minimizer: [
-      new TerserPlugin()
-    ]
-  }
-})
+      new TerserPlugin(),
+    ],
+  },
+});
