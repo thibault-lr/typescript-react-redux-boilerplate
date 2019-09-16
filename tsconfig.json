@@ -7,11 +7,14 @@
     "target": "es6",
     "jsx": "react",
     "esModuleInterop" : true,
+    "resolveJsonModule": true,
     "strict": true,
     "baseUrl": "./src",
     "paths": {
       "@components/*" : ["./src/components/*"],
-      "@layouts/*" : ["./src/layouts/*"]
+      "@layouts/*" : ["./src/layouts/*"],
+      "@config/*" : ["./config/*"],
+      "@services/*" : ["./services/*"]
     }
   }
   

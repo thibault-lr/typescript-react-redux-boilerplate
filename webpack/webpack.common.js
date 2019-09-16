@@ -17,6 +17,8 @@ module.exports = {
       pages: path.resolve(__dirname, '..', 'src', 'pages'),
       layouts: path.resolve(__dirname, '..', 'src', 'layouts'),
       scss: path.resolve(__dirname, '..', 'src', 'scss'),
+      config: path.resolve(__dirname, '..', 'config'),
+      services: path.resolve(__dirname, '..', 'src', 'services'),
     },
   },
   module: {
