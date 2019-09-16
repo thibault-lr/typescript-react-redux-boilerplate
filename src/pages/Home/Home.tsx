@@ -1,13 +1,21 @@
 import * as React from 'react';
 
-import { Title } from 'components/atoms/Title';
+import Main from 'layouts/Main';
+
+import { Header } from 'components/molecules/Header';
 
 class Home extends React.PureComponent<{}, {}> {
   public render(): JSX.Element {
+    const menuItems = [
+      { content: 'Home', path: '/', active: true },
+      { content: 'Blog', path: '/blog', active: false },
+    ];
+
     return (
-      <div>
-        <Title title="Home" />
-      </div>
+      <Main>
+        <Header items={menuItems} />
+        Home page
+      </Main>
     );
   }
 }

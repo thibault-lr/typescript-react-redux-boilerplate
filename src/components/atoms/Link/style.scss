@@ -1,0 +1,15 @@
+@import "scss/colors";
+
+.customlink {
+  padding: 1em;
+  color: $gold;
+
+  &__link {
+    text-decoration: none;
+    color: $gold;
+  }
+
+  &__active {
+    text-decoration: underline;
+  }
+}

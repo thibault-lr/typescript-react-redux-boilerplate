@@ -1,17 +1,21 @@
 import * as React from 'react';
 
-import { Title } from 'components/atoms/Title';
+import Main from 'layouts/Main';
+
+import { Header } from 'components/molecules/Header';
 
 class Blog extends React.PureComponent<{}, {}> {
-  componentDidMount() {
-    console.log('mount');
-  }
-
   public render(): JSX.Element {
+    const menuItems = [
+      { content: 'Home', path: '/', active: false },
+      { content: 'Blog', path: '/blog', active: true },
+    ];
+
     return (
-      <div>
-        <Title title="Blog" />
-      </div>
+      <Main>
+        <Header items={menuItems} />
+        Blog page
+      </Main>
     );
   }
 }
