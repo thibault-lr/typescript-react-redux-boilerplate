@@ -1,0 +1,17 @@
+{
+  "scss.lint.importStatement": "ignore",
+  "scss.validate": true,
+  "css.validate": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
+}
