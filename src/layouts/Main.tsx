@@ -1,26 +1,28 @@
-import * as React from "react" 
+import * as React from 'react';
 
-import Header  from "./../components/molecules/Header/Header"
-import { IHeaderCardProps } from "components/atoms/HeaderCard"
+import { Header } from 'components/molecules/Header';
 
-import "./style.scss"
+import { IHeaderCardProps } from 'components/atoms/HeaderCard';
 
-class MainLayout extends React.Component<{children: any}, {}> {
+import './style.scss';
+
+class MainLayout extends React.PureComponent<{children: any}, {}> {
   public render(): JSX.Element {
-
     const items: IHeaderCardProps[] = [
-      {content : "Header"},
-      {content : "Header2"},
-      {content : "Header3"}
-    ]
+      { content: 'Header' },
+      { content: 'Header2' },
+      { content: 'Header3' },
+    ];
+
+    const { children } = this.props;
 
     return (
       <div className="main">
         <Header items={items} />
-        {this.props.children}
+        {children}
       </div>
-    )
+    );
   }
 }
 
-export default MainLayout
+export default MainLayout;

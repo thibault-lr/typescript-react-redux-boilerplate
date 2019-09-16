@@ -1,18 +1,23 @@
-import * as React from "react"
+import * as React from 'react';
 
-import "./style.scss"
+import './style.scss';
 
 interface IHeaderCardProps {
   content: string
 }
 
-const HeaderCard = (props: IHeaderCardProps) => (
-  <div className="HeaderCard">
-    {props.content}
-  </div>
-)
+const HeaderCard = (props: IHeaderCardProps) => {
+  const { content } = props;
+
+  return (
+    <div className="HeaderCard">
+      {content}
+    </div>
+  );
+};
 
 export {
-   HeaderCard,
-   IHeaderCardProps
-}
+  HeaderCard,
+  // eslint-disable-next-line no-undef
+  IHeaderCardProps,
+};
