@@ -10,6 +10,7 @@ module.exports = WebpackMerge(common, {
   devServer: {
     contentBase: path.join(__dirname, '', 'dist'),
     watchContentBase: true,
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

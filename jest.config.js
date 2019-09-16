@@ -1,23 +1,24 @@
-module.exports = 
-{
-  "preset": 'ts-jest',
-  "testEnvironment": 'node',
-  "roots": ["<rootDir>/src"],
-  "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  roots: ['<rootDir>/src'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
   },
-  "collectCoverageFrom": [
-    "src/**/*.{js,jsx,ts,tsx}",
-    "!/node_modules/",
-    "!src/**/index.tsx",
-    "!src/index.tsx",
-  ],
-  "setupFilesAfterEnv": ["<rootDir>/enzymeSetUp.ts"],
-  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!/node_modules/',
+    '!src/**/index.tsx',
+    '!src/index.tsx',
 
-  "moduleNameMapper": {
-    "^components/(.*)": "<rootDir>/src/components/$1",
-    "^layouts/(.*)": "<rootDir>/src/layouts/$1",
-    "^.+\\.scss$": "identity-obj-proxy"
-  }
-}
+  ],
+  setupFilesAfterEnv: ['<rootDir>/enzymeSetUp.ts'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+
+  moduleNameMapper: {
+    '^components/(.*)': '<rootDir>/src/components/$1',
+    '^pages/(.*)': '<rootDir>/src/pages/$1',
+    '^layouts/(.*)': '<rootDir>/src/layouts/$1',
+    '^.+\\.scss$': 'identity-obj-proxy',
+  },
+};
