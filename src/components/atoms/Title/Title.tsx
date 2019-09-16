@@ -2,11 +2,12 @@ import * as React from 'react';
 
 import './style.scss';
 
-export interface ITitle {
+interface ITitle {
   title: string
 }
 
 
+// eslint-disable-next-line import/prefer-default-export
 const Title = (props: ITitle) => {
   const { title } = props;
   return (
@@ -14,4 +15,8 @@ const Title = (props: ITitle) => {
   );
 };
 
-export default Title;
+export {
+  // eslint-disable-next-line no-undef
+  ITitle,
+  Title,
+};

@@ -2,7 +2,8 @@ import * as React from 'react';
 
 
 import { shallow } from 'enzyme';
-import Title from './Title';
+import { Title } from './Title';
+
 
 test('CTitle should be displayed correctly', () => {
   const checkbox = shallow(<Title title="test" />);
