@@ -13,8 +13,8 @@
     "paths": {
       "@components/*" : ["./src/components/*"],
       "@layouts/*" : ["./src/layouts/*"],
-      "@config/*" : ["./config/*"],
-      "@services/*" : ["./services/*"]
+      "@config/*" : ["./src/config/*"],
+      "@services/*" : ["./src/services/*"]
     }
   }
   

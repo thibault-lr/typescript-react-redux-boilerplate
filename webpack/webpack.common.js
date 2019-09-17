@@ -11,13 +11,13 @@ module.exports = {
     chunkFilename: '[name].[hash].bundle.js',
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.scss'],
+    extensions: ['.tsx', '.ts', '.js', '.scss', '.json'],
     alias: {
       components: path.resolve(__dirname, '..', 'src', 'components'),
       pages: path.resolve(__dirname, '..', 'src', 'pages'),
       layouts: path.resolve(__dirname, '..', 'src', 'layouts'),
       scss: path.resolve(__dirname, '..', 'src', 'scss'),
-      config: path.resolve(__dirname, '..', 'config'),
+      config: path.resolve(__dirname, '..', 'src', 'config'),
       services: path.resolve(__dirname, '..', 'src', 'services'),
     },
   },

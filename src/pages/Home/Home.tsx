@@ -16,7 +16,7 @@ class Home extends React.PureComponent<{}, {user: any, loading: boolean}> {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     InfoService.getInfos()
       .then((infos: any) => {
         this.setState({
