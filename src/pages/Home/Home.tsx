@@ -2,28 +2,36 @@ import * as React from 'react';
 
 import Main from 'layouts/Main';
 
+import { Title } from 'components/atoms/Title';
 import { Header } from 'components/molecules/Header';
 import InfoService from 'services/v1/infos';
 
 
-class Home extends React.PureComponent<{}, {user: any, loading: boolean}> {
+class Home extends React.PureComponent<{}, {user: any, loading: boolean, error: boolean}> {
   constructor(props: any) {
     super(props);
 
     this.state = {
       user: false,
       loading: true,
+      error: false,
     };
   }
 
-  componentDidMount() {
-    InfoService.getInfos()
-      .then((infos: any) => {
-        this.setState({
-          user: infos.data.results[0],
-          loading: false,
-        });
+  async componentDidMount() {
+    try {
+      const infos = await InfoService.getInfos();
+      this.setState({
+        user: infos.results[0],
+        loading: false,
+        error: false,
       });
+    } catch (err) {
+      this.setState({
+        error: true,
+        loading: false,
+      });
+    }
   }
 
 
@@ -33,20 +41,27 @@ class Home extends React.PureComponent<{}, {user: any, loading: boolean}> {
       { content: 'Blog', path: '/blog', active: false },
     ];
 
-    const { loading } = this.state;
-    const { user } = this.state;
+    const { loading, user, error } = this.state;
 
     return (
       <Main>
         <Header items={menuItems} />
         Home page
-        {loading && <div> Loading user ...</div>}
+        {loading && <div className="loading"> Loading user ...</div>}
         {
-          !loading
+          !loading && !error
           && (
-            <div>
-              Hello :
-              { user.email}
+            <div className="user">
+              <Title title={`Hello ${user.email}`} />
+            </div>
+          )
+        }
+
+        {
+          !loading && error
+          && (
+            <div className="error">
+              Error loading
             </div>
           )
         }
