@@ -15,6 +15,7 @@ describe.only('Blog', () => {
       </MemoryRouter>,
     );
 
+    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find(Header).length).toBe(1);
   });
 });

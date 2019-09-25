@@ -8,6 +8,7 @@ describe.only('Not Found', () => {
   it('Should render the not found page correctly', () => {
     const wrapper = mount(<NotFound />);
 
+    expect(wrapper).toMatchSnapshot();
     expect(wrapper.text()).toBe('Not Found');
   });
 });
