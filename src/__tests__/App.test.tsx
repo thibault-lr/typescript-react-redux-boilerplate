@@ -8,7 +8,7 @@ import Blog from 'pages/Blog/Blog';
 
 import { MemoryRouter } from 'react-router';
 
-import App from './App';
+import App from '../App';
 
 describe('App rendering', () => {
   it('Should render the app and Home as basic route', () => {

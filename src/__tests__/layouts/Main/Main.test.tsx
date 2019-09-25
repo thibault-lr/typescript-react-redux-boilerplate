@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { shallow } from 'enzyme';
 
-import Main from './Main';
+import Main from 'layouts/Main';
 
 test('Main should render correctly', () => {
   const main = shallow(
@@ -11,5 +11,6 @@ test('Main should render correctly', () => {
     </Main>,
   );
 
+  expect(main).toMatchSnapshot();
   expect(main.contains(<div>Test</div>)).toBe(true);
 });

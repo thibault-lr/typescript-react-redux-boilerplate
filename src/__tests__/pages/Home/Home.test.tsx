@@ -22,6 +22,15 @@ describe('Home', () => {
     (infosService.default.getInfos as jest.Mock).mockClear();
   });
 
+  it('Should match the snapshort', () => {
+    const wrapper: ReactWrapper = mount(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('Should render the Home page correctly', async () => {
     (infosService.default.getInfos as jest.Mock).mockResolvedValue(infos);
 
