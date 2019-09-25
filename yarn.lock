@@ -440,6 +440,13 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
+"@types/moxios@^0.4.9":
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/@types/moxios/-/moxios-0.4.9.tgz#64f5c067e0e0173f72944b785689420e04015b86"
+  integrity sha512-Sd1b24QRW2N194j2LEDPQAZK1h0TBtpN+2EIH+rERCgm38qm14JZwC7NlpE7n3jULhlCIPZBG8uNcbjF8KcCaQ==
+  dependencies:
+    axios "^0.19.0"
+
 "@types/node@*":
   version "12.7.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.4.tgz#64db61e0359eb5a8d99b55e05c729f130a678b04"
@@ -5470,6 +5477,11 @@ move-concurrently@^1.0.1:
     mkdirp "^0.5.1"
     rimraf "^2.5.4"
     run-queue "^1.0.3"
+
+moxios@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/moxios/-/moxios-0.4.0.tgz#fc0da2c65477d725ca6b9679d58370ed0c52f53b"
+  integrity sha1-/A2ixlR31yXKa5Z51YNw7QxS9Ts=
 
 ms@2.0.0:
   version "2.0.0"
