@@ -1,37 +1,37 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
 import Main from 'layouts/Main';
 
-import { Title } from 'components/atoms/Title';
+// import { Title } from 'components/atoms/Title';
 import { Header } from 'components/molecules/Header';
-import InfoService from 'services/v1/infos';
+
+import { fetchRequest } from 'store/people/action';
+
+import { ApplicationState } from 'store';
+import { IPeople } from 'store/people/types';
 
 
-class Home extends React.PureComponent<{}, {user: any, loading: boolean, error: boolean}> {
-  constructor(props: any) {
-    super(props);
+interface PropsFromState {
+  loading: boolean,
+  results: IPeople[],
+  errors?: string,
+}
 
-    this.state = {
-      user: false,
-      loading: true,
-      error: false,
-    };
-  }
+interface PropsFromDispatch {
+  fetchRequest: typeof fetchRequest
+}
 
-  async componentDidMount() {
-    try {
-      const infos = await InfoService.getInfos();
-      this.setState({
-        user: infos.results[0],
-        loading: false,
-        error: false,
-      });
-    } catch (err) {
-      this.setState({
-        error: true,
-        loading: false,
-      });
-    }
+type AllProps = PropsFromState & PropsFromDispatch
+
+class Home extends React.Component<AllProps> {
+  // constructor(props: any) {
+  //   super(props);
+  // }
+
+  componentDidMount() {
+    const { fetchRequest: fr } = this.props;
+    fr();
   }
 
 
@@ -41,33 +41,33 @@ class Home extends React.PureComponent<{}, {user: any, loading: boolean, error: 
       { content: 'Blog', path: '/blog', active: false },
     ];
 
-    const { loading, user, error } = this.state;
+    const { loading, results } = this.props;
 
     return (
       <Main>
         <Header items={menuItems} />
         Home page
-        {loading && <div className="loading"> Loading user ...</div>}
+        {loading && results.length === 0 && <div className="loading"> Loading user ...</div>}
         {
-          !loading && !error
-          && (
-            <div className="user">
-              <Title title={`Hello ${user.email}`} />
+          !loading && results.length > 0
+          && results.map((r, i:number) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className="user" key={`user-${i}`}>
+              {r.email}
             </div>
-          )
-        }
-
-        {
-          !loading && error
-          && (
-            <div className="error">
-              Error loading
-            </div>
-          )
+          ))
         }
       </Main>
     );
   }
 }
+const mapStateToProps = ({ people }: ApplicationState) => ({
+  loading: people.loading,
+  error: people.errors,
+  results: people.results,
+});
+const mapDispatchToProps = {
+  fetchRequest,
+};
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

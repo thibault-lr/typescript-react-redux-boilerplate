@@ -1,20 +1,28 @@
 import * as React from 'react';
 
 import { mount } from 'enzyme';
+import { createBrowserHistory } from 'history';
+import { MemoryRouter } from 'react-router';
+
 
 import Main from 'layouts/Main';
 import Home from 'pages/Home/Home';
 import Blog from 'pages/Blog/Blog';
 
-import { MemoryRouter } from 'react-router';
-
 import App from '../App';
+import configureStore from '../configureStore';
+
+const history = createBrowserHistory();
+
+const initialState = window.INITIAL_REDUX_STATE;
+const mockStore = configureStore(history, initialState);
+
 
 describe('App rendering', () => {
   it('Should render the app and Home as basic route', () => {
     const wrapper = mount(
       <MemoryRouter initialEntries={['/']}>
-        <App />
+        <App store={mockStore} history={history} />
       </MemoryRouter>,
     );
 

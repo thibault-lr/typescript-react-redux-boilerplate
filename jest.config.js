@@ -22,5 +22,7 @@ module.exports = {
     '^services/(.*)': '<rootDir>/src/services/$1',
     '^layouts/(.*)': '<rootDir>/src/layouts/$1',
     '^.+\\.scss$': 'identity-obj-proxy',
+    '^store/(.*)': '<rootDir>/src/store/$1',
+    '^utils/(.*)': '<rootDir>/src/utils/$1',
   },
 };
