@@ -40,13 +40,13 @@ describe('Home', () => {
       </MemoryRouter>,
     );
 
-    const instance = wrapper.find(Home).instance();
+    const instance: any | undefined = wrapper.find(Home).instance();
 
 
     // test before api call
     expect(wrapper.find('.loading').text().includes('Loading user ...')).toBe(true);
 
-    await (instance as Home).componentDidMount();
+    await (instance).componentDidMount();
 
     wrapper.update();
 
@@ -63,9 +63,9 @@ describe('Home', () => {
       </MemoryRouter>,
     );
 
-    const instance = wrapper.find(Home).instance();
+    const instance:any = wrapper.find(Home).instance();
 
-    await (instance as Home).componentDidMount();
+    await (instance).componentDidMount();
     wrapper.update();
 
     expect(wrapper.find('.error').text().includes('Error loading')).toBe(true);
