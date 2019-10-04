@@ -5,7 +5,6 @@ import { createBrowserHistory } from 'history';
 import { MemoryRouter } from 'react-router';
 
 
-import Main from 'layouts/Main';
 import Home from 'pages/Home/Home';
 import Blog from 'pages/Blog/Blog';
 
@@ -25,11 +24,10 @@ describe('App rendering', () => {
         <App store={mockStore} history={history} />
       </MemoryRouter>,
     );
-
     // expected app layout
-    expect(wrapper.find(Main)).toHaveLength(1);
+    expect(wrapper.find(Home)).toHaveLength(1);
 
-    // expected router elements
+    // // expected router elements
     expect(wrapper.find(Home)).toHaveLength(1);
     expect(wrapper.find(Blog)).toHaveLength(0);
   });

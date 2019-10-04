@@ -66,6 +66,7 @@ const mapStateToProps = ({ people }: ApplicationState) => ({
   error: people.errors,
   results: people.results,
 });
+
 const mapDispatchToProps = {
   fetchRequest,
 };

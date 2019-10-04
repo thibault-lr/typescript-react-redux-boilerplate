@@ -16,7 +16,6 @@ const reducer: Reducer<PeopleState> = (state = initialState, action) => {
       return { ...state, loading: true };
     }
     case PeopleActionTypes.FETCH_SUCCESS: {
-      console.log('this case', action);
       return { ...state, loading: false, ...action.payload };
     }
     case PeopleActionTypes.FETCH_ERROR: {
