@@ -16,8 +16,6 @@ enum PeopleActionTypes {
 }
 
 
-// Declare state types with `readonly` modifier to get compile time immutability.
-// https://github.com/piotrwitek/react-redux-typescript-guide#state-with-type-level-immutability
 interface PeopleState {
   readonly loading: boolean
   readonly results: IPeople[]

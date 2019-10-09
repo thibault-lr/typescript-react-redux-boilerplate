@@ -1,16 +1,13 @@
 import { Store, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-// `react-router-redux` is deprecated, so we use `connected-react-router`.
-// This provides a Redux middleware which connects to our `react-router` instance.
 import { routerMiddleware } from 'connected-react-router';
-// We'll be using Redux Devtools. We can use the `composeWithDevTools()`
-// directive so we can pass our middleware along with it
 import { composeWithDevTools } from 'redux-devtools-extension';
-// If you use react-router, don't forget to pass in your history type.
 import { History } from 'history';
+import { createRootReducer } from 'store/rootReducer';
+import { rootSaga } from 'store/rootSaga';
 
 // Import the state interface and our combined reducers/sagas.
-import { ApplicationState, createRootReducer, rootSaga } from './store';
+import { ApplicationState } from './store/appState';
 
 // eslint-disable-next-line max-len
 export default function configureStore(history: History, initialState: ApplicationState): Store<ApplicationState> {
