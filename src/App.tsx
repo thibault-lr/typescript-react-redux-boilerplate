@@ -8,7 +8,7 @@ import Home from 'pages/Home/Home';
 import Blog from 'pages/Blog/Blog';
 import NotFound from 'pages/NotFound/NotFound';
 
-import { ApplicationState } from 'store';
+import { ApplicationState } from 'store/appState';
 import { ConnectedRouter } from 'connected-react-router';
 
 interface AppProps {

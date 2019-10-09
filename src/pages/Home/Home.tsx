@@ -8,7 +8,7 @@ import { Header } from 'components/molecules/Header';
 
 import { fetchRequest } from 'store/people/action';
 
-import { ApplicationState } from 'store';
+import { ApplicationState } from 'store/appState';
 import { IPeople } from 'store/people/types';
 
 

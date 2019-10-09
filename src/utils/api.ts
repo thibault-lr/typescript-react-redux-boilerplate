@@ -1,11 +1,14 @@
-// eslint-disable-next-line import/prefer-default-export
-export async function callApi(method: string, url: string, path: string, data?: any) {
-  const res = await fetch(`${url}/${path}`, {
-    method,
-    headers: {
-      Accept: 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  return res.json();
-}
+import Axios, { AxiosResponse } from 'axios';
+
+const getRequest = async (url:string): Promise<AxiosResponse> => {
+  try {
+    const res = await Axios.get(url);
+    return res.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export default {
+  getRequest,
+};
